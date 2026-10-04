@@ -153,14 +153,14 @@ function LoginScreen() {
     <main className="login-shell">
       <div className="login-noise" />
       <div className="login-split-glow" />
-      <header className="login-header"><AppLogo /><div className="secure-chip"><ShieldCheck size={14} /> SISTEMA PROTEGIDO</div></header>
+      <header className="login-header"><AppLogo /><div className="secure-chip"><ShieldCheck size={14} /> MELHOR AUXILIO DE MIRA</div></header>
       <section className="login-content">
         <div className="login-copy">
-          <figure className="login-photo"><img src="/ninoffz-mark.png" alt="Logo NINOFFZ Sensi" /><figcaption>NINOFFZ / BLUE EDITION</figcaption></figure>
+          <figure className="login-photo"><img src="/ninoffz-mark.png" alt="Logo NINOFFZ Sensi" /><figcaption>NINOFFZ / AUXILIO DE MIRA</figcaption></figure>
           <span className="eyebrow"><span className="eyebrow-dot" /> ACESSO EXCLUSIVO</span>
           <h1>NINO<br /><em>FFZ</em></h1>
-          <p>Acesse o painel NINOFFZ com sua key e tenha à mão o auxílio e as informações da comunidade.</p>
-          <div className="login-stats"><div><b>01</b><span>ANDROID<br />E IOS</span></div><div><b>∞</b><span>MELHOR<br />AUXILIO</span></div></div>
+          <p>Acesse o painel NINOFFZ com sua key e tenha à mão o auxílio.</p>
+          <div className="login-stats"><div><b>00</b><span>MULTI<br />PLATAFORMAS</span></div><div><b>∞</b><span>PURPOU DEV<br />2026</span></div></div>
         </div>
         <div className="login-card-wrap">
           <div className="login-card-topline"><span className="red-line" /><span>NINOFFZ / {adminMode ? "ADMIN ACCESS" : "LICENSE ACCESS"}</span><span className="online-dot" /></div>
@@ -172,11 +172,11 @@ function LoginScreen() {
               <button className="primary-button login-button" disabled={pending}>{pending ? <><RefreshCw size={17} className="spin" /> VALIDANDO...</> : <>{adminMode ? "ENTRAR NO ADMIN" : "ENTRAR NO PAINEL"}<ChevronRight size={18} /></>}</button>
             </form>
             <button type="button" className="text-button admin-toggle" onClick={() => { setAdminMode(value => !value); setAccessKey(""); }}>{adminMode ? "Voltar para acesso de usuário" : "Acesso administrativo"}<ChevronRight size={14} /></button>
-            <div className="secure-footer"><Wifi size={13} /> CONEXÃO CRIPTOGRAFADA <span /> <span>SESSÃO PRIVADA</span></div>
+            <div className="secure-footer"><Wifi size={13} />$$$$$ <span /> <span>PRIVA</span></div>
           </div>
         </div>
       </section>
-      <footer className="login-footer"><span>NINOFFZ / 2026</span><span>Auxílio · Sobre</span><span className="footer-red">●</span></footer>
+      <footer className="login-footer"><span>PURPOU DEV / 2026</span><span>Auxílio · Sobre</span><span className="footer-red">●</span></footer>
 
     </main>
   );
@@ -258,7 +258,7 @@ function AuxilioPage() {
   return (
     <div className={`aux-page ninoffz-aux-page ${quickExit ? "quick-exit-active" : ""}`}>
       {quickExit ? <div className="quick-exit-screen"><div className="quick-exit-mark"><X size={25} /></div><b>Saída rápida</b><span>Sessão encerrada neste site.</span></div> : <div className="aux-window ninoffz-aux-window">
-        <header className="nino-aux-topbar"><div className="nino-aux-brand"><img src="/ninoffz-mark.png" alt="NINOFFZ" /><div><span>CONTROL INTERFACE</span><b>NINOFFZ <i>BLUE EDITION</i></b></div></div><div className="nino-aux-health"><span className="online-dot" /> SISTEMA ATIVO</div></header>
+        <header className="nino-aux-topbar"><div className="nino-aux-brand"><img src="/ninoffz-mark.png" alt="NINOFFZ" /><div><span>CONTROL INTERFACE</span><b>NINOFFZ <i>PURPOU DEV</i></b></div></div><div className="nino-aux-health"><span className="online-dot" /> SISTEMA ATIVO</div></header>
         <nav className="nino-aux-tabs" aria-label="Seções do auxílio">{tabs.map(item => <button key={item.id} className={tab === item.id ? "active" : ""} onClick={() => setTab(item.id)}><item.icon size={17} /><span>{item.label}</span></button>)}</nav>
         <section className="aux-content nino-aux-content">
           <header className="aux-header"><div><span className="aux-kicker">NINOFFZ / AUXÍLIO</span><h1>{tab === "aimbot" ? "AIMBOT" : tab === "sensi" ? "GERADOR DE SENSI" : tab === "modules" ? "MÓDULOS" : "INJEÇÃO"}</h1><p>{tab === "aimbot" ? "Ajuste sua experiência com controles rápidos." : tab === "sensi" ? "Escolha uma plataforma para abrir o gerador." : tab === "modules" ? "Acesse seus módulos em cartões compactos." : "Atalhos e estado da sessão do jogo."}</p></div><button className="aux-close" onClick={() => toast.info("Você está no Auxílio NINOFFZ")} aria-label="Informações do auxílio"><CircleHelp size={17} /></button></header>
@@ -267,7 +267,7 @@ function AuxilioPage() {
           {tab === "sensi" && <div className="aux-center-panel"><Crosshair size={38} /><h2>Selecione seu celular:</h2><p>Escolha o sistema para abrir o gerador principal.</p><div className="aux-choice-row"><button onClick={() => toast.info("Use o Gerador para configurar seu iOS")}>iOS</button><button className="selected" onClick={() => toast.info("Use o Gerador para configurar seu Android")}>Android</button></div></div>}
           {tab === "modules" && <div className="aux-module-grid"><AuxModule name="Precisão visual" icon={Crosshair} active={toggles.legit} onClick={() => toggle("legit")} /><AuxModule name="Resposta rápida" icon={Zap} active={toggles.lag} onClick={() => toggle("lag")} /><AuxModule name="Controle de mira" icon={Gauge} active={toggles.recoil} onClick={() => toggle("recoil")} /><AuxModule name="Bypass" icon={LogOut} active={false} onClick={quickExitNow} /></div>}
           {tab === "injection" && <div className="aux-injection"><div className="aux-action-row"><button onClick={() => { openGame("normal"); inject("FF NORMAL"); }} disabled={Boolean(injecting)}><Sparkles size={17} /> ABRIR FF NORMAL</button><button onClick={() => { openGame("max"); inject("FF MAX"); }} disabled={Boolean(injecting)}><Sparkles size={17} /> ABRIR FF MAX</button></div><div className={`aux-injection-state ${active ? "active" : ""}`}>{injecting ? <><RefreshCw className="spin" size={18} /> Injeção em andamento...</> : active ? <><span className="aux-green-dot" /> Injeção ativa e funcionando!</> : "Aguardando módulo"}</div><div className="aux-console">{logs.map((log, index) => <div key={`${log}-${index}`} className={log.includes("SUCESSO") ? "success" : ""}><span>[{new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit", second: "2-digit" })}]</span> {log}</div>)}</div></div>}
-          <footer className="aux-footer">NINOFFZ <b>BLUE EDITION / 2026</b></footer>
+          <footer className="aux-footer">NINOFFZ <b>PURPOU DEV / 2026</b></footer>
         </section>
       </div>}
     </div>
@@ -287,7 +287,7 @@ function LoadingList() { return <div className="loading-list">{[1, 2, 3].map(ite
 function EmptyState({ favoritesOnly }: { favoritesOnly: boolean }) { return <div className="empty-state"><div><History size={24} /></div><h3>{favoritesOnly ? "Nenhum favorito ainda" : "Seu histórico está vazio"}</h3><p>{favoritesOnly ? "Marque uma configuração com estrela para encontrá-la aqui." : "Gere sua primeira sensibilidade e ela aparecerá aqui."}</p></div>; }
 
 function InfoPage() {
-  return <div className="page-view nino-about-page"><PageHeading kicker="NINOFFZ / SOBRE" title="Seu painel. Sua comunidade." description="Um espaço direto para o auxílio e para as informações oficiais do projeto." /><div className="nino-about-grid"><section className="nino-about-brand"><img src="/ninoffz-mark.png" alt="Logo NINOFFZ Sensi" /><div><span className="tag tag-red">BLUE EDITION</span><h2>NINOFFZ<br /><em>SENSI</em></h2><p>Interface renovada em azul, feita para caber bem no celular e no computador.</p></div></section><section className="contact-panel nino-community"><span className="card-step">PRECISA DE AJUDA?</span><h3>Entre para a comunidade.</h3><p>Converse com a comunidade NINOFFZ, peça suporte e acompanhe as novidades.</p><a className="contact-button" href="https://discord.gg/bgSrEknD4d" target="_blank" rel="noreferrer"><span className="contact-letter">D</span><span><b>Abrir Discord</b><small>Comunidade · suporte</small></span><ChevronRight size={17} /></a></section></div><blockquote className="nino-verse"><span>“</span><p>Deus é o nosso refúgio e fortaleza, socorro bem presente na angústia.</p><cite>SALMOS 46:1</cite></blockquote></div>;
+  return <div className="page-view nino-about-page"><PageHeading kicker="NINOFFZ / SOBRE" title="Seu painel. Sua comunidade." description="Um espaço direto para o auxílio e para as informações oficiais do projeto." /><div className="nino-about-grid"><section className="nino-about-brand"><img src="/ninoffz-mark.png" alt="Logo NINOFFZ Sensi" /><div><span className="tag tag-red">AU</span><h2>NINOFFZ<br /><em>SENSI</em></h2><p>auxilio de mira.</p></div></section><section className="contact-panel nino-community"><span className="card-step">PRECISA DE AJUDA?</span><h3>Entre para a comunidade.</h3><p>Converse com a comunidade NINOFFZ, peça suporte e acompanhe as novidades.</p><a className="contact-button" href="https://discord.gg/bgSrEknD4d" target="_blank" rel="noreferrer"><span className="contact-letter">D</span><span><b>Abrir Discord</b><small>Comunidade · suporte</small></span><ChevronRight size={17} /></a></section></div><blockquote className="nino-verse"><span>“</span><p>Deus é o nosso refúgio e fortaleza, socorro bem presente na angústia.</p><cite>SALMOS 46:1</cite></blockquote></div>;
 }
 function UserShell({ children, view, onChangeView, session, onLogout }: { children: React.ReactNode; view: View; onChangeView: (view: View) => void; session: { username: string; planId: string; expiresAt: Date | string; deviceId?: string | null }; onLogout: () => void }) {
   const nav: { id: View; label: string; icon: React.ElementType }[] = [
