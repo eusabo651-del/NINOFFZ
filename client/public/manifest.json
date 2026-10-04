@@ -1,7 +1,7 @@
 {
   "name": "NINOFFZ",
   "short_name": "NINOFFZ",
-  "description": "Painel NINOFFZ de auxílio e comunidade.",
+  "description": "Painel NINOFFZ auxílio de mira.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#07101f",
