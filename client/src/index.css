@@ -117,6 +117,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .input-shell, .select-shell, .search-shell { display: flex; align-items: center; gap: 10px; height: 45px; padding: 0 13px; border: 1px solid #292d35; border-radius: 8px; color: #727783; background: #17191e; transition: border-color .16s ease, background .16s ease; }
 .input-shell:focus-within, .select-shell:focus-within, .search-shell:focus-within { border-color: #3c89da; background: #1b1d23; }
 .input-shell input, .search-shell input { width: 100%; border: 0; outline: 0; color: #f8f8f7; background: transparent; font-size: 12px; }
+.input-shell input, .search-shell input { min-width: 0; -webkit-user-select: text; user-select: text; touch-action: manipulation; }
 .input-shell input::placeholder, .search-shell input::placeholder { color: #666b76; }
 .input-action { display: inline-grid; place-items: center; padding: 3px; color: #636873; background: transparent; }
 .input-action:hover { color: #fff; }
@@ -627,4 +628,7 @@ body { background: radial-gradient(ellipse at 55% 0%, #102b50 0, transparent 38%
   .nino-aux-content .aux-module { gap: 5px; padding-right: 5px; padding-left: 5px; }
   .nino-aux-content .aux-module b { font-size: 7px; }
   .nino-aux-content .aux-module i { width: 17px; height: 17px; }
+}
+@media (max-width: 760px) {
+  .login-form .input-shell input { font-size: 16px; }
 }

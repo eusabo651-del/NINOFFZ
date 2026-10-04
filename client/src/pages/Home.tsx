@@ -127,7 +127,11 @@ function LoadingScreen() {
 function LoginScreen() {
   const [adminMode, setAdminMode] = useState(false);
   const [accessKey, setAccessKey] = useState("");
-  useEffect(() => { navigator.serviceWorker?.register("/sw.js").catch(() => undefined); }, []);
+  useEffect(() => {
+    navigator.serviceWorker?.register("/sw.js", { updateViaCache: "none" })
+      .then(registration => registration.update())
+      .catch(() => undefined);
+  }, []);
   const login = trpc.auth.login.useMutation({
     onSuccess: data => {
       localStorage.removeItem("rbxis_admin_mode_v3");

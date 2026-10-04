@@ -1,4 +1,4 @@
-const CACHE_NAME = "ninoffz-shell-v2";
+const CACHE_NAME = "ninoffz-shell-v3";
 const APP_SHELL = ["/", "/manifest.json", "/ninoffz-brand.png", "/ninoffz-mark.png", "/ninoffz-mark-192.png"];
 
 self.addEventListener("install", event => {
